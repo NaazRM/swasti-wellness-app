@@ -1,0 +1,38 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <circle cx="16" cy="16" r="16" fill="url(#gradient)"/>
+  
+  <!-- Lotus flower design -->
+  <g transform="translate(16, 16)">
+    <!-- Center circle -->
+    <circle cx="0" cy="0" r="2" fill="#ffffff" opacity="0.9"/>
+    
+    <!-- Lotus petals -->
+    <g stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.8">
+      <!-- Top petal -->
+      <path d="M0,-8 C-2,-6 -2,-4 0,-2 C2,-4 2,-6 0,-8Z"/>
+      <!-- Top-right petal -->
+      <path d="M5.66,-5.66 C4.24,-3.24 2.83,-2.83 0,-2 C2.83,-2.83 4.24,-3.24 5.66,-5.66Z"/>
+      <!-- Right petal -->
+      <path d="M8,0 C6,-2 4,-2 2,0 C4,2 6,2 8,0Z"/>
+      <!-- Bottom-right petal -->
+      <path d="M5.66,5.66 C4.24,3.24 2.83,2.83 0,2 C2.83,2.83 4.24,3.24 5.66,5.66Z"/>
+      <!-- Bottom petal -->
+      <path d="M0,8 C-2,6 -2,4 0,2 C2,4 2,6 0,8Z"/>
+      <!-- Bottom-left petal -->
+      <path d="M-5.66,5.66 C-4.24,3.24 -2.83,2.83 0,2 C-2.83,2.83 -4.24,3.24 -5.66,5.66Z"/>
+      <!-- Left petal -->
+      <path d="M-8,0 C-6,-2 -4,-2 -2,0 C-4,2 -6,2 -8,0Z"/>
+      <!-- Top-left petal -->
+      <path d="M-5.66,-5.66 C-4.24,-3.24 -2.83,-2.83 0,-2 C-2.83,-2.83 -4.24,-3.24 -5.66,-5.66Z"/>
+    </g>
+  </g>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#15803d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
