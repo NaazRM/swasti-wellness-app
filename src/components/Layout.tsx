@@ -9,6 +9,11 @@ const Layout: React.FC = () => {
         <Outlet />
       </main>
       <BottomNavigation />
+      <footer>
+        <p className="text-center py-4 text-gray-500 text-sm">
+          Built with <a href="https://bolt.new" className="text-primary-600 hover:text-primary-700 underline">Bolt.new</a>
+        </p>
+      </footer>
     </div>
   );
 };
