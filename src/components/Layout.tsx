@@ -5,13 +5,12 @@ import BottomNavigation from './BottomNavigation';
 const Layout: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      <main className="flex-1 pb-20">
+      <main className="flex-1 pb-24">
         <Outlet />
       </main>
-      <BottomNavigation />
       
-      {/* Built with Bolt.new attribution */}
-      <div className="bg-white border-t border-gray-100 py-3">
+      {/* Built with Bolt.new attribution - positioned above bottom nav */}
+      <div className="bg-white border-t border-gray-100 py-2 px-4">
         <p className="text-center text-xs text-gray-500">
           Built with{' '}
           <a 
@@ -24,6 +23,8 @@ const Layout: React.FC = () => {
           </a>
         </p>
       </div>
+      
+      <BottomNavigation />
     </div>
   );
 };
