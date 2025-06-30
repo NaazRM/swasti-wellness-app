@@ -46,9 +46,29 @@ const EmailVerification: React.FC = () => {
 
       if (data.user) {
         setVerificationStatus('success');
-        await getCurrentUser();
+        
+        // Directly update the auth store state to reflect successful verification
+        useAuthStore.setState({
+          user: {
+            id: data.user.id,
+            email: data.user.email || '',
+            name: data.user.user_metadata?.full_name || 'User',
+            avatar: data.user.user_metadata?.avatar_url,
+            bio: undefined,
+            location: undefined,
+            followersCount: 0,
+            followingCount: 0,
+            tipsCount: 0,
+            savedTipsCount: 0,
+          },
+          needsEmailVerification: false,
+          isLoading: false,
+          error: null,
+        });
+        
+        // Wait a moment for the user to see the success message, then navigate
         setTimeout(() => {
-          navigate('/');
+          navigate('/', { replace: true });
         }, 2000);
       }
     } catch (error: any) {
@@ -105,6 +125,11 @@ const EmailVerification: React.FC = () => {
                 <CheckCircle className="text-green-500 mx-auto mb-4" size={48} />
                 <h2 className="text-xl font-bold text-gray-800 mb-2">Email Verified!</h2>
                 <p className="text-gray-600 mb-4">Your email has been successfully verified. Redirecting you to the app...</p>
+                <div className="animate-pulse">
+                  <div className="h-2 bg-green-200 rounded-full">
+                    <div className="h-2 bg-green-600 rounded-full animate-pulse" style={{ width: '70%' }}></div>
+                  </div>
+                </div>
               </>
             )}
 
@@ -113,12 +138,20 @@ const EmailVerification: React.FC = () => {
                 <AlertCircle className="text-red-500 mx-auto mb-4" size={48} />
                 <h2 className="text-xl font-bold text-gray-800 mb-2">Verification Failed</h2>
                 <p className="text-red-600 mb-4">{errorMessage}</p>
-                <button
-                  onClick={() => navigate('/login')}
-                  className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors"
-                >
-                  Go to Login
-                </button>
+                <div className="space-y-3">
+                  <button
+                    onClick={() => navigate('/login')}
+                    className="w-full bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors"
+                  >
+                    Go to Login
+                  </button>
+                  <button
+                    onClick={() => window.location.reload()}
+                    className="w-full bg-gray-100 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                  >
+                    Try Again
+                  </button>
+                </div>
               </>
             )}
           </div>
