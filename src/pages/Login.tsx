@@ -58,18 +58,6 @@ const Login: React.FC = () => {
             </div>
           )}
 
-          {/* Demo credentials notice */}
-          <div className="bg-blue-50 text-blue-700 p-3 rounded-lg mb-6 text-sm">
-            <p className="font-medium mb-2">Demo Account:</p>
-            <p className="text-xs mb-2">Email: demo@example.com | Password: demo123</p>
-            <button
-              type="button"
-              onClick={fillDemoCredentials}
-              className="text-blue-600 underline text-xs hover:text-blue-800"
-            >
-              Click to fill demo credentials
-            </button>
-          </div>
           
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
